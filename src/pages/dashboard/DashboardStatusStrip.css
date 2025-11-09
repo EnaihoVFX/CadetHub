@@ -1,0 +1,58 @@
+.dashboard-status-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: clamp(14px, 3vw, 18px);
+}
+
+.dashboard-status-strip__chip {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(170deg, rgba(18, 30, 68, 0.8), rgba(12, 20, 48, 0.9));
+  border: 1px solid rgba(120, 160, 255, 0.22);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-status-strip__chip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.dashboard-status-strip__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(110, 160, 255, 0.18);
+  font-size: 1.1rem;
+  filter: drop-shadow(0 4px 10px rgba(120, 180, 255, 0.35));
+}
+
+.dashboard-status-strip__text {
+  display: grid;
+  gap: 6px;
+}
+
+.dashboard-status-strip__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(226, 233, 255, 0.78);
+}
+
+.dashboard-status-strip__value {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold, #f3cc4c);
+}

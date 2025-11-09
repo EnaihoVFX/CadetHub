@@ -1,0 +1,234 @@
+.dashboard-profile-card {
+  align-self: stretch;
+  display: grid;
+  gap: clamp(18px, 3vw, 26px);
+  padding: clamp(22px, 3vw, 28px);
+  background: linear-gradient(200deg, rgba(18, 28, 68, 0.9), rgba(9, 14, 38, 0.93));
+  border: 1px solid rgba(118, 148, 255, 0.32);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 38px rgba(4, 6, 18, 0.45),
+    inset 0 0 0 1px rgba(52, 84, 190, 0.35);
+}
+
+.dashboard-profile-card__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.dashboard-profile-card__avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(128, 156, 255, 0.2));
+  box-shadow:
+    inset 0 0 0 1px rgba(135, 165, 255, 0.25),
+    0 12px 20px rgba(10, 18, 52, 0.45);
+}
+
+.dashboard-profile-card__avatar img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  image-rendering: pixelated;
+}
+
+.dashboard-profile-card__initials {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0b1128;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.dashboard-profile-card__identity {
+  display: grid;
+  gap: 6px;
+}
+
+.dashboard-profile-card__role {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(197, 210, 255, 0.65);
+}
+
+.dashboard-profile-card__name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.96rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f6f8ff;
+}
+
+.dashboard-profile-card__level {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: rgba(214, 224, 255, 0.75);
+}
+
+.dashboard-profile-card__progress {
+  display: grid;
+  gap: 10px;
+}
+
+.dashboard-profile-card__progress-track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(10, 16, 40, 0.75);
+  border: 1px solid rgba(118, 148, 255, 0.28);
+  overflow: hidden;
+}
+
+.dashboard-profile-card__progress-fill {
+  position: relative;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(110, 220, 255, 0.95), rgba(243, 204, 76, 0.95));
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.45),
+    0 4px 12px rgba(110, 180, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.dashboard-profile-card__progress-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #041022;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.dashboard-profile-card__progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: rgba(200, 214, 255, 0.68);
+}
+
+.dashboard-profile-card__stats {
+  list-style: none;
+  margin: 0;
+  padding: 18px 0;
+  display: grid;
+  gap: 14px;
+  border-top: 1px solid rgba(118, 148, 255, 0.22);
+  border-bottom: 1px solid rgba(24, 36, 84, 0.85);
+}
+
+.dashboard-profile-card__stats li {
+  display: grid;
+  gap: 4px;
+}
+
+.dashboard-profile-card__stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(198, 210, 255, 0.65);
+}
+
+.dashboard-profile-card__stat-value {
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: #f9fbff;
+}
+
+.dashboard-profile-card__links {
+  display: grid;
+  gap: 10px;
+}
+
+.dashboard-profile-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(118, 148, 255, 0.22);
+  background: rgba(12, 18, 44, 0.6);
+  color: rgba(215, 225, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.dashboard-profile-card__link::after {
+  content: '›';
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.dashboard-profile-card__link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 205, 255, 0.45);
+  color: #ffffff;
+}
+
+.dashboard-profile-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 4px solid rgba(125, 205, 255, 0.6);
+  border-radius: 10px;
+  background: rgba(15, 23, 52, 0.9);
+  color: var(--accent-cyan, #6fe4ff);
+  box-shadow:
+    inset 0 0 0 1px rgba(174, 208, 255, 0.25),
+    0 6px 0 rgba(13, 19, 42, 0.75);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, color 0.12s ease;
+}
+
+.dashboard-profile-card__cta:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+  border-color: rgba(125, 205, 255, 0.75);
+}
+
+.dashboard-profile-card__cta:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 0 0 1px rgba(174, 208, 255, 0.25),
+    0 4px 0 rgba(13, 19, 42, 0.75);
+}
+
+@media (max-width: 720px) {
+  .dashboard-profile-card {
+    padding: 20px;
+  }
+
+  .dashboard-profile-card__header {
+    align-items: flex-start;
+  }
+
+  .dashboard-profile-card__progress-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

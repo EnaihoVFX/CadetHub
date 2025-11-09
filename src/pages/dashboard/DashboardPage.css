@@ -1,0 +1,35 @@
+.dashboard-page {
+  --bg: #050918;
+  --panel: #0e1734;
+  --panel-alt: #121f46;
+  --panel-mid: #172650;
+  --accent-gold: #f3cc4c;
+  --accent-amber: #f6a55d;
+  --accent-cyan: #6fe4ff;
+  --accent-blue: rgba(148, 176, 255, 0.2);
+  --text-strong: #f9fbff;
+  --text-soft: rgba(226, 233, 255, 0.75);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 38px);
+  display: grid;
+  gap: clamp(24px, 4vw, 36px);
+  color: var(--text-strong);
+  background: linear-gradient(180deg, rgba(6, 11, 30, 0.78), rgba(5, 10, 24, 0.95));
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(2, 6, 18, 0.55);
+}
+
+.dashboard-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: clamp(24px, 4vw, 32px);
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .dashboard-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 45px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform;
+  z-index: 9999;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom-cursor.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: #040716;
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  color: #ffffff;
+}
+
+.app-main {
+  padding: clamp(16px, 4vw, 32px);
+}
+
+.blank-page {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  background: #040716;
+}
+
