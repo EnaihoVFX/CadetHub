@@ -49,6 +49,17 @@ const headerStyles = `
   filter: none;
 }
 
+.app-header__brand-text {
+  margin-left: 16px;
+  color: #f4f7ff;
+  font-family: 'Hitchcut', 'Press Start 2P', cursive;
+  font-size: clamp(0.78rem, 2.15vw, 1.24rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 1px 0 rgba(18, 22, 54, 0.9);
+}
+
 .app-header__brand:hover {
   transform: translateY(-1px);
 }
@@ -248,6 +259,7 @@ function AppHeader() {
         <div className="app-header__left">
           <Link to="/" className="app-header__brand" aria-label="Code Cadets home">
             <img src={logoImg} alt="Cadet Hub logo" className="app-header__logo" />
+            <span className="app-header__brand-text">CadetHub</span>
           </Link>
         </div>
         <div className="app-header__actions">

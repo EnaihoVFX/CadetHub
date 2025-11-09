@@ -1,10 +1,15 @@
-import heroBg from '../../assets/herobg.png'
+import heroBg from '../../assets/herobg.jpg'
 import './DashboardHero.css'
 
 function DashboardHero() {
   return (
     <section className="dashboard-hero" aria-labelledby="dashboard-hero-title">
-      <div className="dashboard-hero__frame" style={{ '--hero-background': `url(${heroBg})` }}>
+      <div
+        className="dashboard-hero__frame"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(32, 52, 110, 0.55), rgba(12, 20, 48, 0.78)), url(${heroBg})`,
+        }}
+      >
         <div className="dashboard-hero__content">
           <span className="dashboard-hero__eyebrow">Mission Control</span>
           <h1 id="dashboard-hero-title" className="dashboard-hero__title pixel-font">

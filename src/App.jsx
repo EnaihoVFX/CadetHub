@@ -4,12 +4,21 @@ import AppHeader from './components/AppHeader.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Home from './pages/Home.jsx'
 import Profile from './pages/Profile.jsx'
+import mainBg from './assets/bg.jpg'
 import './App.css'
 
 function App() {
   return (
     <Router>
-      <div className="app">
+      <div
+        className="app"
+        style={{
+          backgroundImage: `url(${mainBg})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
+      >
         <AppHeader />
         <main className="app-main">
           <Routes>
