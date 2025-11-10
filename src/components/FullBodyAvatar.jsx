@@ -22,6 +22,7 @@ function buildStyles(equipped) {
     ? {
         '--avatar-skin': bodyItem.colors.skin,
         '--avatar-hair': bodyItem.colors.hair,
+        '--avatar-body-glow': bodyItem.colors.glow,
       }
     : undefined
 
@@ -64,16 +65,17 @@ function FullBodyAvatar({ equipped, size = 'md', className }) {
               <span className="full-avatar__mouth" aria-hidden="true" />
             </div>
           </div>
-          <div className="full-avatar__torso" style={outfitStyle}>
-            <div className="full-avatar__torso-panel" />
+          <div className="full-avatar__upper" style={outfitStyle}>
+            <span className="full-avatar__arm full-avatar__arm--left" aria-hidden="true" />
+            <div className="full-avatar__torso">
+              <div className="full-avatar__torso-panel" />
+            </div>
+            <span className="full-avatar__arm full-avatar__arm--right" aria-hidden="true" />
           </div>
-          <div className="full-avatar__arms" style={outfitStyle}>
-            <span className="full-avatar__arm full-avatar__arm--left" />
-            <span className="full-avatar__arm full-avatar__arm--right" />
-          </div>
+          <div className="full-avatar__belt" style={outfitStyle} aria-hidden="true" />
           <div className="full-avatar__legs" style={outfitStyle}>
-            <span className="full-avatar__leg full-avatar__leg--left" />
-            <span className="full-avatar__leg full-avatar__leg--right" />
+            <span className="full-avatar__leg full-avatar__leg--left" aria-hidden="true" />
+            <span className="full-avatar__leg full-avatar__leg--right" aria-hidden="true" />
           </div>
           <div
             className={classNames('full-avatar__accessory', `full-avatar__accessory--${equipped.accessory}`)}

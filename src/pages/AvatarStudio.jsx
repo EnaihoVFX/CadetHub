@@ -122,6 +122,7 @@ function AvatarStudio() {
             style={{
               '--preview-skin': colors.skin || '#f4c9a3',
               '--preview-hair': colors.hair || '#3b2c35',
+              '--preview-glow': colors.glow || '#60a5fa',
             }}
             aria-hidden="true"
           >

@@ -86,7 +86,7 @@ function Profile() {
         {/* Profile Header Card */}
         <div className="profile-header">
           <div className="profile-avatar">
-            <FullBodyAvatar equipped={equipped} size="lg" />
+            <FullBodyAvatar equipped={equipped} size="lg" className="profile-avatar-figure" />
             <button
               type="button"
               className="profile-avatar-edit pixel-font"

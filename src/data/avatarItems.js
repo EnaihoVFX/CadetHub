@@ -14,11 +14,12 @@ export const AVATAR_CATEGORIES = [
       },
       {
         id: 'body-midnight',
-        name: 'Midnight',
+        name: 'Midnight Synth',
         price: 250,
         colors: {
-          skin: '#8d6b5b',
-          hair: '#1f1b3f',
+          skin: '#2a1f38',
+          hair: '#7f5bff',
+          glow: '#5bffda',
         },
       },
       {
