@@ -1,17 +1,12 @@
 import './dashboard/DashboardPage.css'
 import DashboardHero from './dashboard/DashboardHero.jsx'
-import DashboardProfileCard from './dashboard/DashboardProfileCard.jsx'
-import DashboardStatusStrip from './dashboard/DashboardStatusStrip.jsx'
 
 function Dashboard() {
   return (
     <div className="dashboard-page">
-      <div className="dashboard-main">
+      <div className="dashboard-layout" role="presentation">
         <DashboardHero />
-        <DashboardProfileCard />
       </div>
-
-      <DashboardStatusStrip />
     </div>
   )
 }

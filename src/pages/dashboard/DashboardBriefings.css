@@ -1,0 +1,110 @@
+.dashboard-briefings {
+  display: grid;
+  gap: clamp(16px, 3vw, 24px);
+  padding: clamp(18px, 3vw, 26px);
+  border: 6px solid transparent;
+  border-image: var(--pixel-border-soft) 3 stretch;
+  background: linear-gradient(200deg, rgba(10, 16, 40, 0.92), rgba(5, 10, 28, 0.96));
+  box-shadow:
+    0 20px 42px rgba(4, 6, 18, 0.45),
+    inset 0 0 0 1px rgba(86, 128, 230, 0.2);
+}
+
+.dashboard-briefings__header {
+  display: grid;
+  gap: 8px;
+}
+
+.dashboard-briefings__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(136, 166, 255, 0.32);
+  background: rgba(12, 20, 46, 0.8);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(206, 220, 255, 0.82);
+}
+
+.dashboard-briefings__title {
+  font-size: clamp(1rem, 2.8vw, 1.3rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f6f8ff;
+  text-shadow: 0 3px 0 rgba(8, 12, 32, 0.8);
+}
+
+.dashboard-briefings__section {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(8, 14, 36, 0.85);
+  border: 1px solid rgba(118, 148, 255, 0.22);
+}
+
+.dashboard-briefings__section-title {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(214, 224, 255, 0.85);
+}
+
+.dashboard-briefings__section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.dashboard-briefings__section li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.dashboard-briefings__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background:
+    rgba(110, 160, 255, 0.18)
+    center / 18px 18px no-repeat;
+  background-image: var(--briefing-icon);
+  filter: drop-shadow(0 4px 10px rgba(110, 170, 255, 0.35));
+}
+
+.dashboard-briefings__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(214, 224, 255, 0.85);
+}
+
+.dashboard-briefings__detail {
+  margin: 4px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(204, 216, 255, 0.75);
+}
+
+@media (max-width: 960px) {
+  .dashboard-briefings {
+    padding: 20px;
+  }
+}
+
+
+
+
+
+

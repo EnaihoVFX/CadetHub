@@ -75,6 +75,7 @@ const headerStyles = `
   box-shadow:
     inset 0 0 0 1px rgba(98, 127, 255, 0.26),
     0 12px 22px rgba(7, 12, 28, 0.48);
+  margin-left: auto;
 }
 
 .app-header__nav::before {
@@ -97,12 +98,30 @@ const headerStyles = `
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.app-header__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .app-header__link:hover {
-  opacity: 0.85;
-  color: #f9fbff;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+  transform: translateY(-2px);
+}
+
+.app-header__link:hover::before {
+  opacity: 1;
 }
 
 .app-header__link::after {
@@ -110,6 +129,8 @@ const headerStyles = `
   font-size: 0.6rem;
   opacity: 0.6;
   transform: translateY(-1px);
+  position: relative;
+  z-index: 1;
 }
 
 .app-header__link--solo::after {
@@ -248,9 +269,109 @@ const headerStyles = `
   box-shadow:
     0 4px 0 rgba(109, 52, 6, 0.8);
 }
+
+/* XP Bar */
+.app-header__xp-bar {
+  background: rgba(4, 7, 22, 0.8);
+  border-top: 1px solid rgba(120, 160, 255, 0.2);
+  padding: 10px clamp(16px, 5vw, 36px);
+}
+
+.app-header__xp-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-header__xp-level {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: #6fe4ff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.app-header__xp-progress-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-header__xp-track {
+  flex: 1;
+  position: relative;
+  height: 20px;
+  border-radius: 6px;
+  background: rgba(10, 16, 42, 0.9);
+  box-shadow: 
+    inset 0 2px 6px rgba(4, 7, 22, 0.7),
+    0 1px 0 rgba(148, 180, 255, 0.15);
+  overflow: hidden;
+  border: 2px solid rgba(118, 148, 255, 0.4);
+}
+
+.app-header__xp-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--xp-progress, 0%);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #6fe4ff 0px,
+      #6fe4ff 8px,
+      #1c86ff 8px,
+      #1c86ff 16px
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 2px 8px rgba(111, 228, 255, 0.5);
+  animation: xp-flow 1.5s linear infinite;
+  transition: width 0.5s ease;
+}
+
+@keyframes xp-flow {
+  0% { background-position: 0 0; }
+  100% { background-position: 32px 0; }
+}
+
+.app-header__xp-text {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(226, 234, 255, 0.9);
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .app-header__xp-level {
+    font-size: 0.55rem;
+  }
+  
+  .app-header__xp-text {
+    font-size: 0.6rem;
+  }
+  
+  .app-header__xp-track {
+    height: 16px;
+  }
+}
 `
 
 function AppHeader() {
+  // Mock XP data - in a real app, this would come from user context/state
+  const currentXP = 2450
+  const xpForNextLevel = 3000
+  const currentLevel = 12
+  const xpProgress = (currentXP / xpForNextLevel) * 100
+
   return (
     <>
       <style>{headerStyles}</style>
@@ -272,6 +393,24 @@ function AppHeader() {
           <Link to="/dashboard" className="app-header__cta">
             Dashboard
           </Link>
+        </div>
+      </div>
+      
+      {/* XP Progress Bar */}
+      <div className="app-header__xp-bar">
+        <div className="app-header__xp-container">
+          <span className="app-header__xp-level">LVL {currentLevel}</span>
+          <div className="app-header__xp-progress-wrapper">
+            <div className="app-header__xp-track">
+              <div 
+                className="app-header__xp-fill"
+                style={{ '--xp-progress': `${xpProgress}%` }}
+              />
+            </div>
+            <span className="app-header__xp-text">
+              {currentXP.toLocaleString()} / {xpForNextLevel.toLocaleString()} XP
+            </span>
+          </div>
         </div>
       </div>
     </header>

@@ -31,9 +31,32 @@
 .app {
   position: relative;
   min-height: 100vh;
-  background: #040716;
   font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  color: #ffffff;
+  color: #111;
+  background: linear-gradient(180deg, #0264d1 0%, #b2ddf2 100%);
+  isolation: isolate;
+}
+
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.app::before {
+  z-index: -3;
+  background: none;
+  filter: blur(12px) brightness(1.14);
+  transform: scale(1.08);
+  will-change: transform;
+}
+
+.app::after {
+  z-index: -2;
+  background: none;
+  mix-blend-mode: normal;
 }
 
 .app-main {
@@ -43,6 +66,6 @@
 .blank-page {
   width: 100%;
   min-height: calc(100vh - 64px);
-  background: #040716;
+  background: linear-gradient(180deg, #0264d1 0%, #b2ddf2 100%);
 }
 
